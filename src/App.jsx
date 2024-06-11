@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import './App.css'
 
 const url = 'https://api.adviceslip.com/advice'
 function App() {
@@ -25,16 +24,23 @@ function App() {
   }, [])
 
   return (
-    <div>
-      <h1>Advices :</h1>
-      <button onClick={getAdvice}>Get Advice</button>
+    <main className="flex items-center justify-center h-screen w-screen">
+      <div className="wisdom-wrapper text-center  ">
+        <h1 className="text-3xl">Advice Oasis: Tap for Wisdom</h1>
+        <button
+          onClick={getAdvice}
+          className="my-4 py-1 px-2 "
+        >
+          Get Advice
+        </button>
 
-      <h3>{advice}</h3>
+        <h3>{advice}</h3>
 
-      <div className="message">
-        <p>Total advices read: {count}</p>
+        <div className="message">
+          <p>Total advices read: {count}</p>
+        </div>
       </div>
-    </div>
+    </main>
   )
 }
 
